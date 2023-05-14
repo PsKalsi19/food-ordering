@@ -56,7 +56,7 @@ const Menu = () => {
             <div>
             </div>
             <h3>Menu</h3>
-            <div className="menu-cards">{menu && menu.length > 0 && filterMenu(menu, filters).map(item => <MenuCard key={item.id} menuItem={item} />)}</div>
+            <div className="menu-cards">{menu && menu.length > 0 && filterMenu(menu, filters).map(item => <MenuCard key={item.id} showActionButtons={true} menuItem={item} />)}</div>
         </section>
     )
 }

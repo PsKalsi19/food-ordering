@@ -6,7 +6,7 @@ const Home=()=>{
         <div>
             <main><h3>Welcome to neoG Food Ordering App</h3></main>
             <div>
-                <button onClick={()=>navigate('/menu')}>See Menu</button>
+                <button className="btn btn-secondary" onClick={()=>navigate('/menu')}>See Menu</button>
             </div>
         </div>
     )

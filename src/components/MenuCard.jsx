@@ -3,11 +3,11 @@ import { MenuContext } from "../context/MenuProvider"
 import { useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-const MenuCard=({menuItem})=>{
-    const {addToCartHandler}=useContext(MenuContext);
-    const navigate=useNavigate()
-    const {name,description,price,image,delivery_time,is_spicy,is_vegetarian,is_added}=menuItem
-    return(
+const MenuCard = ({ menuItem,showActionButtons }) => {
+    const { addToCartHandler } = useContext(MenuContext);
+    const navigate = useNavigate()
+    const { name, description, price, image, delivery_time, is_spicy, is_vegetarian, is_added } = menuItem
+    return (
         <div className="card">
             <header className="img-header"> <img height="250px" width='272px' src={image} alt={name} /> </header>
             <span className="dish-name">{name}</span>
@@ -20,7 +20,7 @@ const MenuCard=({menuItem})=>{
             <footer>
                 <p>${price}</p>
                 <p>Delivery Time: {delivery_time} mins</p>
-                <div className="btn-container"><button type="button" onClick={ is_added?()=>navigate('/cart') :()=>addToCartHandler(menuItem)} className="btn btn-primary">{is_added?'Go to Cart':'Add to Cart'}</button></div>
+                {showActionButtons && <div className="btn-container"><button type="button" onClick={is_added ? () => navigate('/cart') : () => addToCartHandler(menuItem)} className="btn btn-primary">{is_added ? 'Go to Cart' : 'Add to Cart'}</button></div>}
             </footer>
         </div>
     )

@@ -47,6 +47,7 @@
 .btn{
     padding: 0.5rem 3rem;
     width: auto;
+    margin:0.5rem;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
@@ -59,11 +60,13 @@
 .btn-secondary{
   background-color: #fef3c7;
   color: #9a3412;
+  border:1px solid #9a3412
 }
 
 .btn:disabled{
   pointer-events: none;
   cursor: not-allowed;
+  color:#fafafa;
   background-color: grey;
 }
 
